@@ -14,7 +14,7 @@ namespace Baza_danych
 
         public void connect_data()
         {
-            
+
             try
             {
                 conn.Open();
@@ -54,13 +54,32 @@ namespace Baza_danych
                 conn.Close();
             }
             catch
-            { 
-            
+            {
+
                 Console.WriteLine("Nie udało sie pokazac danych");
                 conn.Close();
             }
 
         }
+        public void insert_data()
+        {
+            string namee = "Kamil";
+            string pass = "Kamil12";
 
+            string insert_query = "INSERT INTO user (Name,Passwd) VALUES ('" + namee + "','" + pass + "')";
+
+            MySqlCommand insert = new MySqlCommand(insert_query, conn);
+            try
+            {
+                insert.ExecuteNonQuery();
+                Console.WriteLine("Udało sie wprowadzic urzytkownika i password");
+            }
+            catch
+            {
+                Console.WriteLine("nie udało sie");
+            }
+
+
+        }
     }
 }
