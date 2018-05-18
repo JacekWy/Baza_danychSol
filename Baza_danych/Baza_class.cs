@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Baza_danych
 {
-    class Baza_class
+    public class Baza_class
     {
         static string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=baza;SslMode=none;";
         MySqlConnection conn = new MySqlConnection(connectionString);
@@ -63,8 +63,16 @@ namespace Baza_danych
         }
         public void insert_data()
         {
-            string namee = "Kamil";
-            string pass = "Kamil12";
+            string namee;
+            string pass;
+
+            Console.WriteLine("Dodawanie uzytkownika");
+            namee = Console.ReadLine();
+            Console.WriteLine("Password");
+            pass = Console.ReadLine();
+
+            Console.WriteLine("Dodajesz: " + namee +" czy na pewno chszesz dodac tego uzytkownika");
+
 
             string insert_query = "INSERT INTO user (Name,Passwd) VALUES ('" + namee + "','" + pass + "')";
 

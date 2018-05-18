@@ -15,7 +15,7 @@ namespace Baza_danych
             Baza_class connect = new Baza_class();
 
             connect.connect_data();
-            connect.insert_data();
+            //connect.insert_data();
             connect.show_data();
 
             
